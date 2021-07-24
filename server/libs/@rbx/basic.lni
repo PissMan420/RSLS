@@ -87,6 +87,9 @@ obj = true
 [plugin]
 type = 'Plugin'
 
+# Environments related synapse functions
+# can be looked here: https://x.synapse.to/docs/reference/environment.html
+
 [getgenv]
 description = 'Returns the environment that will be applied to each script ran by the scripting utility'
 type = 'function'
@@ -240,3 +243,46 @@ type = 'number'
 name = 'MaxSimulationRadius'
 type = 'number'
 optional = 'true'
+
+# script synapse related function
+# https://x.synapse.to/docs/reference/script.html
+[getsenv]
+type = 'function'
+description = 'Returns the environment of Script. Errors if the script is not loaded in memory.'
+[[.args]]
+name = 'Script'
+type = 'ModuleScript | LocalScript'
+[[.returns]]
+name = 'env'
+type = 'table'
+
+[getcallingscript]
+type = 'function'
+description = 'Gets the script that is calling this function.'
+
+[[.returns]]
+type = 'LocalScript | ModuleScript | nil'
+name = 'script'
+
+[getscriptclosure]
+type = 'function'
+description = 'Gets a bare function from the script passed. Please note this is not the original function of the script and will not have upvalues/enviornment correctly defined.'
+
+[[.args]]
+name = 'Script'
+type = 'ModuleScript | LocalScript'
+
+[[.returns]]
+type = 'function'
+
+[getscripthash]
+type = 'function'
+description = 'Returns a SHA384 hash of the scripts bytecode. You can use this to detect changes of a script.'
+
+[[.args]]
+name = 'Script'
+type = 'ModuleScript | LocalScript'
+
+[[.returns]]
+name = 'hash'
+type = 'string'
