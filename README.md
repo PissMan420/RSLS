@@ -1,6 +1,6 @@
 # Roblox Luau Language Server
 
-[Original Project](https://github.com/sumneko/lua-language-server) by [sumneko](https://github.com/sumneko)
+[Original Project](https://github.com/NightrainsRbx/RobloxLsp) by [NightrainsRbx](https://github.com/NightrainsRbx)
 
 Make sure you don't have both [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) by sumneko and Roblox LSP installed.
 
@@ -11,6 +11,7 @@ https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/7
 
 ## Feature
 
+- [x] Exact Synapse scripting utility environment
 - [x] Exact Roblox Environment
 - [x] Support for Luau Syntax
 - [x] Roblox Classes and Datatypes
