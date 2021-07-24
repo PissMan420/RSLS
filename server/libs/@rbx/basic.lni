@@ -286,3 +286,16 @@ type = 'ModuleScript | LocalScript'
 [[.returns]]
 name = 'hash'
 type = 'string'
+
+# synapse table related functions
+# https://x.synapse.to/docs/reference/table.html
+[getrawmetatable]
+type = 'function'
+description = 'Retrieve the metatable of value irregardless of value\'s metatable\'s __metatable field. Returns nil if it doesn\'t exist.'
+
+[[.args]]
+name = 'value'
+type = 'table'
+[[.returns]]
+name = 'metatable'
+type = 'table'
