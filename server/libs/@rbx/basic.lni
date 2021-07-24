@@ -87,8 +87,6 @@ obj = true
 [plugin]
 type = 'Plugin'
 
-# Environments related synapse functions
-# can be looked here: https://x.synapse.to/docs/reference/environment.html
 
 [getgenv]
 description = 'Returns the environment that will be applied to each script ran by the scripting utility'
@@ -244,8 +242,6 @@ name = 'MaxSimulationRadius'
 type = 'number'
 optional = 'true'
 
-# script synapse related function
-# https://x.synapse.to/docs/reference/script.html
 [getsenv]
 type = 'function'
 description = 'Returns the environment of Script. Errors if the script is not loaded in memory.'
@@ -287,8 +283,6 @@ type = 'ModuleScript | LocalScript'
 name = 'hash'
 type = 'string'
 
-# synapse table related functions
-# https://x.synapse.to/docs/reference/table.html
 [getrawmetatable]
 type = 'function'
 description = 'Retrieve the metatable of value irregardless of value\'s metatable\'s __metatable field. Returns nil if it doesn\'t exist.'
@@ -296,6 +290,7 @@ description = 'Retrieve the metatable of value irregardless of value\'s metatabl
 [[.args]]
 name = 'value'
 type = 'table'
+
 [[.returns]]
 name = 'metatable'
 type = 'table'
