@@ -86,3 +86,157 @@ obj = true
 
 [plugin]
 type = 'Plugin'
+
+[getgenv]
+description = 'Returns the environment that will be applied to each script ran by the scripting utility'
+type = 'function'
+[[.returns]]
+type = "table"
+
+[getrenv]
+description = 'Returns the global environment for the LocalScript state.'
+type = 'function'
+[[.returns]]
+type = 'table'
+
+[getreg]
+description = 'Return the Lua registry.'
+type = 'function'
+[[.returns]]
+type = 'table'
+
+[getgc]
+name = 'getgc'
+type = 'function'
+description = 'Returns all functions and userdata values within the GC. Passing `true` will also return tables.'
+[[.args]]
+name = 'include_tables'
+type = 'boolean'
+optional = 'true'
+[[.returns]]
+type = 'table'
+
+[getinstances]
+type = 'function'
+description = 'Returns a list of all instances within the game.'
+[[.returns]]
+name = 'instances'
+type = 'table'
+
+[getnilinstances]
+type = 'function'
+description = 'Returns a list of all instances parented to `nil` within the game.'
+[[.returns]]
+type = 'table'
+
+[getscripts]
+type = 'function'
+description = 'Returns a list of all scripts within the game.'
+[[.returns]]
+name = 'module_scripts_and_local_script'
+type = 'table'
+
+[getloadedmodules]
+type = 'function'
+description = 'Returns all ModuleScripts loaded in the game.'
+[[.returns]]
+name = 'loadedModules'
+type = 'table'
+
+[getconnections]
+type = 'function'
+description = "Gets a list of connections to the specified signal.\nYou can do the following operation on a connection:\n\n.Function:	The function connected to the connection\n\n.State	The state of the connection\n\n:Enable	Enables the connection\n\n:Disable	Disables the connection\n\n :Fire	Fires the connection"
+[[.returns]]
+name = 'connections'
+type = 'table'
+
+[firesignal]
+type = 'function'
+description = 'Fires all the connections connected to the signal `Signal` with `Args`.'
+[[.args]]
+name = 'signal'
+type = 'Signal'
+``````````
+name = 'Args'
+type = '...table'
+
+[fireclickdetector]
+type = 'function'
+description = 'Fires the designated ClickDetector with provided Distance. If Distance isn\'t provided, it will default to 0.'
+[[.args]]
+name = 'Detector'
+type = 'ClickDetector'
+``````````
+name = 'Distance'
+type = 'number'
+optional = 'true'
+
+[fireproximityprompt]
+type = 'function'
+description = 'Fires the designated ProximityPrompt.'
+[[.args]]
+name = 'Prompt'
+type = 'ProximityPrompt'
+``````````
+name = 'Distance'
+type = 'number'
+
+[firetouchinterest]
+type = 'function'
+description = 'Fakes a .Touched event to ToTouch with Part. The Toggle argument must be either 0 or 1 (for fire/un-fire).\n\n **Note:** The ToTouch argument must have a child with class TouchTransmitter in order for this function to work.'
+[[.args]]
+name = 'Part'
+type = 'Instance'
+``````````
+name = 'ToTouch'
+type = 'BasePart'
+``````````
+name = 'Toggle'
+type = 'uint'
+
+[isnetworkowner]
+type = 'function'
+description = 'Returns true if the Part is owned by the local player.'
+[[.args]]
+name = 'Part'
+type = 'BasePart'
+[[.returns]]
+name = 'isPlayerOwiningPart'
+type = 'boolean'
+
+[gethiddenproperty]
+type = 'function'
+description = 'Returns the hidden property Property from Object. Errors if the property does not exist.'
+[[.args]]
+name = 'Object'
+type = 'Instance'
+``````````
+name = 'Property'
+type = 'string'
+[[.returns]]
+name = 'property'
+type = 'variant'
+
+[sethiddenproperty]
+type = 'function'
+description = 'Sets the hidden property Property with Value from Object. Errors if the property does not exist.'
+[[.args]]
+name = 'Object'
+type = 'Instance'
+``````````
+name = 'Property'
+type = 'string'
+``````````
+name = 'value'
+type = 'variant'
+
+[setsimulationradius]
+type = 'function'
+description = 'Sets the player\'s `SimulationRadius`. If `MaxSimulationRadius` is specified, it will set that as well.'
+[[.args]]
+name = 'SimulationRadius'
+type = 'number'
+``````````
+name = 'MaxSimulationRadius'
+type = 'number'
+optional = 'true'
