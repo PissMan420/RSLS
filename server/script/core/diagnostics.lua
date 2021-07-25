@@ -87,7 +87,7 @@ function mt:searchMissingModuleReturn(callback)
         return
     end
     if (not self.vm.uri:match("%.server%.lua$")) and (not self.vm.uri:match("%.client%.lua$")) then
-        local hasReturn, multipleReturn = false, false
+        local hasReturn, multipleReturn = true, true -- remove has return diagnostic as it's useless for a exploiter tool
         local start, finish = #self.vm.text, #self.vm.text --searchLastLine(self.vm.text)
         self.vm:eachSource(function (source)
             if source.last then
@@ -531,6 +531,7 @@ local yesIsDefinedGlobal = {
     string = true,
     table = true,
     utf8 = true,
+    syn = true,
 }
 
 function mt:searchUndefinedGlobal(callback)

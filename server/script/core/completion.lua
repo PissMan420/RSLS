@@ -58,7 +58,8 @@ local LIBS = {
     ["debug"] = true,
     ["utf8"] = true,
     ["os"] = true,
-    ["package"] = true
+    ["package"] = true,
+    ["syn"] = true
 }
 
 local function isMethod(func)
