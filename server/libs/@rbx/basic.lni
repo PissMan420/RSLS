@@ -329,3 +329,160 @@ type = 'table'
 name = 'isTableReadOnly'
 type = 'boolean'
 
+[iswindowactive]
+type = 'function'
+description = 'Returns if the main window is in focus. This must return `true` for any other mouse/keyboard function to work.'
+[[.returns]]
+name = 'isWindowActive'
+type = 'boolean'
+
+[keypress]
+type = 'function'
+description = [[
+  Simulates a key press for the specified keycode. Keycodes are listed [here](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
+]]
+[[.args]]
+name = 'keycode'
+type = 'number'
+
+[keyrelease]
+type = 'function'
+description = [[
+  Releases key on the keyboard. You can acess the key values from above [here](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
+]]
+[[.args]]
+name = 'keycode'
+type = 'number'
+
+[mouse1click]
+type = 'function'
+description = 'Simulates a full left mouse button press.'
+[[.returns]]
+type = 'void'
+
+[mouse1press]
+type = 'function'
+description = 'Simulates a left mouse button press without releasing it.'
+[[.returns]]
+type = 'void'
+
+[mouse1release]
+type = 'function'
+description = 'Simulates a left mouse button release.'
+[[.returns]]
+type = 'void'
+
+[mouse2click]
+type = 'function'
+description = 'Simulates a full right mouse button press.'
+[[.returns]]
+type = 'void'
+
+[mouse2press]
+type = 'function'
+description = 'Simulates a right mouse button press without releasing it.'
+[[.returns]]
+type = 'void'
+
+[mouse2release]
+type = 'function'
+description = 'Simulates a right mouse button release.'
+[[.returns]]
+type = 'void'
+
+[mousescroll]
+type = 'function'
+description = 'Scrolls the mouse wheel virtually by `px` pixels'
+[[.args]]
+name = 'px'
+type = 'number'
+
+[mousemoverel]
+type = 'function'
+description = 'Moves the mouse cursor relatively to the current mouse position by coordinates x and y.'
+[[.args]]
+name = 'x'
+type = 'number'
+``````````
+name = 'y'
+type = 'number'
+[[.returns]]
+type = 'void'
+
+[mousemoveabs]
+type = 'function'
+description = 'Move\'s your mouse to the x and y coordinates in pixels from topleft of the main window.'
+[[.args]]
+name = 'x'
+type = 'number'
+``````````
+name = 'y'
+type = 'number'
+[[.returns]]
+type = 'void'
+
+[hookfunction]
+type = 'function'
+description = [[
+  Hooks function old, replacing it with the function hook. The old function is returned, you must use this function in order to call the original function.
+
+  Example:
+  ```lua
+  local OldFireServer
+  OldFireServer = hookfunction(Instance.new'RemoteEvent'.FireServer, newcclosure(function(Event, ...)
+    if not checkcaller() then
+        local Args = {...}
+
+        print(Event)
+        for I, V in pairs(Args) do
+            print(V)
+        end
+    end
+
+    return OldFireServer(Event, ...)
+  end))
+
+  This will now print out the event who called FireServer and the arguments passed to it whenever it is called.
+```
+]]
+[[.args]]
+name = 'old'
+type = 'function'
+``````````
+name = 'hook'
+type = 'function'
+[[.returns]]
+name = 'oldFunction'
+type = 'function'
+
+[hookmetamethod]
+type = 'function'
+description = [[
+Hooks the metamethod passed in the object metatable with hook. A function to call the original metamethod is returned, you must use this function in order to call the original metamethod.
+
+This function will error if an object without a metatable is passed or a invalid metamethod is passed
+
+You can check for examples [here](https://x.synapse.to/docs/development/metamethod_hook_examples.html)
+]]
+[[.args]]
+name = 'object'
+type = 'Object'
+``````````
+name = 'metamethod'
+type = 'string'
+``````````
+name = 'hook'
+type = 'function'
+[[.returns]]
+name = 'oldMetamethod'
+type = 'function'
+
+[newcclosure]
+type = 'function'
+description = 'Pushes a new CClosure that invokes function f upon call. Can be used to avoid detection in thing such as a metamethod hook.'
+[[.args]]
+name = 'f'
+type = 'function'
+[[.returns]]
+name = 'anCFunction'
+type = 'function'

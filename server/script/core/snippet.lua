@@ -8,6 +8,18 @@ local function add(cate, key, label)
         if not snippet[cate][key] then
             snippet[cate][key] = {}
         end
+        if type(label) == "table" then
+           print(label) 
+            local finalLabel = ""
+            for _, textToPut in ipairs(label) do
+                finalLabel = finalLabel .. textToPut
+            end
+
+            snippet[cate][key][#snippet[cate][key]+1] = {
+                label = label,
+                text = text,
+            }
+        end
         snippet[cate][key][#snippet[cate][key]+1] = {
             label = label,
             text = text,
@@ -35,4 +47,5 @@ add('key', 'repeat', 'repeat') "repeat\n\t${0}\nuntil"
 
 add('key', 'while', 'while') "while ${1} do\n\t${0}\nend"
 
+add("key", "hookfunc", "hookfunc") "local ${1:oldFunction}\r\n ${1:oldFunction} = hookfunction($2, function ()\r\n \t$0\r\n\treturn ${1:oldFunction}() end)"
 return snippet

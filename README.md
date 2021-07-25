@@ -10,7 +10,14 @@ https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/7
 [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=Nightrains.robloxlsp)
 
 ## Feature
-
+<!-- TODO For me -->
+<!-- made using websocket -->
+- [] built-in remote spy 
+<!-- check synapse doc -->
+- [] synapse execute
+<!-- fetch file and idk -->
+- [] get info on loadstring module so its helping for GUI
+<!-- TOdo end -->
 - [x] Exact Synapse scripting utility environment
 - [x] Exact Roblox Environment
 - [x] Support for Luau Syntax
