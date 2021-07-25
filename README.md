@@ -47,9 +47,11 @@ https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/7
 
 ### Preview
 
+Youtube demo: https://youtu.be/ca8HoyH4uMA
 ![avatar](https://i.imgur.com/4sgYDii.gif)
 ![avatar](https://i.imgur.com/vHbKIJ0.gif)
 ![avatar](https://cdn.discordapp.com/attachments/434146484758249482/778145929345368064/test.gif)
+![](https://youtu.be/ca8HoyH4uMA)
 
 ## Credit
 
@@ -68,6 +70,10 @@ https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/7
 * [JSON4Lua](http://github.com/craigmj/json4lua/)
 * [utility](https://github.com/sumneko/utility)
 * [vscode-lua-doc](https://github.com/actboy168/vscode-lua-doc)
+* [Richard Stallman](http://stallman.org/)
+* My friends dsf and im a failure for moral support 
+* My dealer for providing purple shortline weed that I smoked while coding
+
 
 ## Acknowledgement
 
@@ -83,9 +89,6 @@ https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/7
 * [Bartel](https://github.com/Letrab)
 * [Ruin0x11](https://github.com/Ruin0x11)
 * [Nightrains](https://github.com/NightrainsRbx)
-* [Richard Stallman](http://stallman.org/)
-* My friends dsf and im a failure for moral support 
-* My dealer for providing purple shortline weed that I smoked while coding
 
 ## How to modify intelisense amd extension:  
 1. Go into the client dir in a terminal and enter the command `npm i`.
