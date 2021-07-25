@@ -1,4 +1,4 @@
-# Roblox Scriptinf Utility Language Server (RSLS)
+# Roblox Scripting Utility Language Server (RSLS)
 
 [Original Project](https://github.com/NightrainsRbx/RobloxLsp) by [NightrainsRbx](https://github.com/NightrainsRbx)
 
