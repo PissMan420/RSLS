@@ -33,3 +33,157 @@ name = 'tag'
 type = 'string'
 
 [resetmemorycategory]
+
+[getconstants]
+type = 'function'
+description = 'Retrieve the constants in function fi or at level fi.'
+[[.args]]
+name = 'fi'
+type = 'number | function'
+[[.returns]]
+type = 'table'
+
+[getconstant]
+type = 'function'
+description = 'Retrieve the constant at index `idx` in function fi or at level fi.'
+[[.args]]
+name = 'fi'
+type = 'number | function'
+``````````
+name = 'idx'
+type = 'number'
+[[.returns]]
+type = 'variant'
+
+[setconstant]
+type = 'function'
+description = 'Retrieve the constant  in function fi or at level fi at index `idx` to value `value`.'
+[[.args]]
+name = 'fi'
+type = 'number | function'
+``````````
+name = 'idx'
+type = 'number'
+``````````
+name = 'value'
+type = 'variant'
+
+
+
+[getupvalues]
+type = 'function'
+description = 'Retrieve the upvalues in function fi or at level fi.'
+[[.args]]
+name = 'fi'
+type = 'number | function'
+[[.returns]]
+type = 'table'
+
+[getupvalue]
+type = 'function'
+description = 'Retrieve the upvalue at index `idx` in function fi or at level fi.'
+[[.args]]
+name = 'fi'
+type = 'number | function'
+``````````
+name = 'idx'
+type = 'number'
+[[.returns]]
+type = 'variant'
+
+[setupvalue]
+type = 'function'
+description = 'Retrieve the upvalue  in function fi or at level fi at index `idx` to value `value`.'
+[[.args]]
+name = 'fi'
+type = 'number | function'
+``````````
+name = 'idx'
+type = 'number'
+``````````
+name = 'value'
+type = 'variant'
+
+
+
+
+[getprotos]
+type = 'function'
+description = 'Returns a table containing the inner functions of function f. Note these functions will not have upvalues, use debug.getproto with activated true to get a list of instances.'
+[[.args]]
+name = 'fi'
+type = 'number | function'
+[[.returns]]
+type = 'table'
+
+[getproto]
+type = 'function'
+description = [[Gets the inner function of f at index.
+
+Note if activated is true, instead it will return a table of functions. These are the instances of that function that exist within the GC.]]
+[[.args]]
+name = 'fi'
+type = 'number | function'
+``````````
+name = 'idx'
+type = 'number'
+``````````
+name = 'activated'
+type = 'boolean'
+
+[[.returns]]
+type = 'function'
+
+[setproto]
+type = 'function'
+description = 'Replaces fi at index with function replacement at level or function fi.'
+[[.args]]
+name = 'fi'
+type = 'number | function'
+``````````
+name = 'idx'
+type = 'number'
+``````````
+name = 'replacement'
+type = 'function'
+
+[getstack]
+type = 'function'
+description = 'Gets the method stack at level indice.'
+[[.args]]
+name = 'indice'
+type = 'number'
+[[.returns]]
+type = 'table'
+
+
+[setstack]
+type = 'function'
+description = 'Set the stack indice at level indice to value value at level idx or function fi.'
+[[.args]]
+name = 'indice'
+type = 'number'
+``````````
+name = 'idx'
+type = 'number'
+``````````
+name = 'value'
+type = 'variant'
+
+[setmetatable]
+type = 'function'
+description = 'Set the metatable of `o` to mt'
+[[.args]]
+name = 'o'
+type = 'table'
+``````````
+name = 'mt'
+type = 'table'
+[[.returns]]
+type = 'table'
+
+[getregistry]
+type = 'function'
+description = 'Return the lua registry'
+[[.returns]]
+type = 'table'
