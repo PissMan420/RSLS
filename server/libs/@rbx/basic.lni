@@ -752,11 +752,15 @@ description = [[
   Saves the current game into your workspace folder. You can use table t to customize options for this.
 
   Option	Value
+
   **mode:**	optimized / full / scripts
   **noscripts:**	true / false
   **scriptcache:**	true / false
   **timeout:**	any number
 ]]
+[[.args]]
+name = 'options'
+type = 'table'
 
 [messagebox]
 type = 'function'
