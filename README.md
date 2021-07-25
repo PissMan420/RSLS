@@ -5,7 +5,7 @@ Make sure you don't have both [Lua](https://marketplace.visualstudio.com/items?i
 ## More Info
 https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/717745
 
-[VSCode Extension](https://marketplace.visualstudio.com/items?itemName=Nightrains.robloxlsp)
+[VSCode Extension](https://marketplace.visualstudio.com/items?itemName=vinidalvino.rsls)
 
 ## Feature
 <!-- TODO For me -->
