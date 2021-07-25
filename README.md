@@ -1,8 +1,8 @@
-# Roblox Luau Language Server
+# Roblox Scriptinf Utility Language Server (RSLS)
 
 [Original Project](https://github.com/NightrainsRbx/RobloxLsp) by [NightrainsRbx](https://github.com/NightrainsRbx)
 
-Make sure you don't have both [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) by sumneko and Roblox LSP installed.
+Make sure you don't have both [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) by sumneko, Roblox LSP and RSLS installed.
 
 ## More Info
 https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/717745
@@ -12,11 +12,11 @@ https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/7
 ## Feature
 <!-- TODO For me -->
 <!-- made using websocket -->
-- [] built-in remote spy 
+<!-- - [] built-in remote spy  -->
 <!-- check synapse doc -->
-- [] synapse execute
+<!-- - [] synapse execute -->
 <!-- fetch file and idk -->
-- [] get info on loadstring module so its helping for GUI
+<!-- - [] get info on loadstring module so its helping for GUI -->
 <!-- TOdo end -->
 - [x] Exact Synapse scripting utility environment
 - [x] Exact Roblox Environment
