@@ -84,3 +84,8 @@ https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/7
 * [Allen Shaw](https://github.com/shuxiao9058)
 * [Bartel](https://github.com/Letrab)
 * [Ruin0x11](https://github.com/Ruin0x11)
+
+## How to modify intelisense amd extension:  
+1. Go into the client dir in a terminal and enter the command `npm i`.
+2. modify the files in the server/libs/@rbx
+3. done!!!
