@@ -294,3 +294,38 @@ type = 'table'
 [[.returns]]
 name = 'metatable'
 type = 'table'
+
+[setrawmetatable]
+type = 'function'
+description = 'Sets `o`\'s metatable to mt even if the `__metatable` field exists in `o`\'s metatable.'
+[[.args]]
+name = 'o'
+type = 'Object'
+``````````
+name = 'mt'
+type = 'table'
+[[.returns]]
+type = 'boolean'
+
+[setreadonly]
+type = 'function'
+description = 'Set\'s `t` read-only value to val.'
+[[.args]]
+name = 't'
+type = 'table'
+``````````
+name = 'val'
+type = 'boolean'
+[[.returns]]
+type = 'void'
+
+[isreadonly]
+type = 'function'
+description = 'Returns `t`\'s read-only conditions.'
+[[.args]]
+name = 't'
+type = 'table'
+[[.returns]]
+name = 'isTableReadOnly'
+type = 'boolean'
+
