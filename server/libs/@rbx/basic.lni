@@ -486,3 +486,62 @@ type = 'function'
 [[.returns]]
 name = 'anCFunction'
 type = 'function'
+
+[loadstring]
+type = 'function'
+description = 'Loads chunk as a Lua function with optional `chunk_name` that will be shown as the script name in errors and returns it if compilation is successful. Otherwise, if an error has occurred during compilation, nil followed by the error message will be returned.'
+[[.args]]
+name = 'chunk'
+type = 'string'
+optional = 'chunk'
+``````````
+name = 'chunk_name'
+type = 'string'
+[[.returns]]
+name = 'stringFunction'
+type = 'function'
+
+[checkcaller]
+type = 'function'
+description = 'Returns true if the current thread is a Synapse thread. **Note:** Checkcaller does *NOT* check the call stack of the function, if you call a game function then it calls out to checkcaller, the result will be true! Be careful.'
+
+[islclosure]
+type = 'function'
+description = 'Return true if `l` is a lua function'
+[[.args]]
+name = 'f'
+type = 'function'
+[[.returns]]
+name = 'isLuaFunc'
+type = 'boolean'
+
+[dumpstring]
+type = 'function'
+description = 'Returns the Synapse formatted bytecode for source string script.'
+[[.args]]
+name = 'Script'
+type = 'string'
+[[.returns]]
+name = 'bytecode'
+type = 'string'
+
+[decompile]
+type = 'function'
+description = [[
+  Decompiles Script and returns the decompiled script with timeout. If the decompilation fails, then the return value will be an error message.
+
+  *Note:* The mode parameter is deprecated and is not used in newer versions of Synapse.
+]]
+[[.args]]
+name = 'thingToDecompile'
+type = 'ModuleScript | LocalScript | function | string | proto'
+``````````
+name = 'mode'
+type = 'string | boolean'
+``````````
+name = 'timeout'
+type = 'number'
+optional = 'true'
+[[.returns]]
+name = 'decompilation'
+type = 'string'
