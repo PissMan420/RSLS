@@ -774,3 +774,10 @@ type = 'sting'
 ``````````
 name = 'flags'
 type = 'number'
+
+[setfpscap]
+type = 'function'
+description = 'Set the maxium FPS'
+[[.args]]
+name = 'maxFps'
+type = 'number'
