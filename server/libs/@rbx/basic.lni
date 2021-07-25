@@ -545,3 +545,65 @@ optional = 'true'
 [[.returns]]
 name = 'decompilation'
 type = 'string'
+
+[rconsoleprint]
+type = 'function'
+description = 'Prints message into the console. rconsoleprint also supports colors.'
+[[.args]]
+name = 'message'
+type = 'string'
+
+[rconsoleinfo]
+type = 'function'
+description = 'Prints message into the console, with a info text before it.'
+[[.args]]
+name = 'message'
+type = 'string'
+
+[rconsolewarn]
+type = 'function'
+description = 'Prints message into the console, with a warn text before it.'
+[[.args]]
+name = 'message'
+type = 'string'
+
+[rconsoleerr]
+type = 'function'
+description = 'Prints message into the console, with a error text before it.'
+[[.args]]
+name = 'message'
+type = 'string'
+
+[rconsoletitle]
+type = 'function'
+description = 'Set the title in the console to the title `title`'
+[[.args]]
+name = 'title'
+type = 'string'
+
+[rconsoleclear]
+type = 'function'
+description = 'Clears the console.'
+
+[rconsoleinput]
+type = 'function'
+description = 'Yields until the user inputs information into their console. Returns the input they put in.'
+[[.returns]]
+name = 'typedText'
+type = 'string'
+
+[printconsole]
+type = 'function'
+description = 'Prints `message` into the internal and integrated console with RGB value. To view the internal console, enable Internal UI in the Options menu and when in-game press INSERT on your keyboard. The integrated console can be found in the new synapse UI.'
+[[.args]]
+name = 'message'
+type = 'string'
+``````````
+name = 'red'
+type = 'number'
+``````````
+name = 'green'
+type = 'number'
+``````````
+name = 'blue'
+type = 'number'
