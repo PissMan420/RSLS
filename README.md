@@ -1,9 +1,3 @@
-[![forthebadge](https://forthebadge.com/images/badges/approved-by-veridian-dynamics.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/thats-how-they-get-you.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/reading-6th-grade-level.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
-
 [Original Project](https://github.com/NightrainsRbx/RobloxLsp) by [NightrainsRbx](https://github.com/NightrainsRbx)
 
 Make sure you don't have both [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) by sumneko, Roblox LSP and RSLS installed.
@@ -88,6 +82,10 @@ https://devforum.roblox.com/t/roblox-lsp-full-intellisense-for-roblox-and-luau/7
 * [Allen Shaw](https://github.com/shuxiao9058)
 * [Bartel](https://github.com/Letrab)
 * [Ruin0x11](https://github.com/Ruin0x11)
+* [Nightrains](https://github.com/NightrainsRbx)
+* [Richard Stallman](http://stallman.org/)
+* My friends dsf and im a failure for moral support 
+* My dealer for providing purple shortline weed that I smoked while coding
 
 ## How to modify intelisense amd extension:  
 1. Go into the client dir in a terminal and enter the command `npm i`.
