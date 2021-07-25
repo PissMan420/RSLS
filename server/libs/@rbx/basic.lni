@@ -607,3 +607,166 @@ type = 'number'
 ``````````
 name = 'blue'
 type = 'number'
+
+[readfile]
+type = 'function'
+description = 'Reads the contents of the file located at `path` and returns it. If the file does not exist, it errors.'
+[[.args]]
+name = 'path'
+type = 'string'
+[[.returns]]
+name = 'content'
+type = 'string'
+
+[appendfile]
+type = 'function'
+description = 'Append the contents of the file located at `path` and returns it. If the file does not exist, it errors.'
+[[.args]]
+name = 'path'
+type = 'string'
+``````````
+name = 'content'
+type = 'string'
+
+[writefile]
+type = 'function'
+description = 'Writes contents to the supplied path.\r\nExtensions that are not allowed: .exe, .scr, .bat, .com, .csh, .msi, .vb, .vbs, .vbe, .ws, .wsf, .wsh, .ps1, .psy. Attempting to call this function with those extensions will error.'
+[[.args]]
+name = 'path'
+type = 'string'
+``````````
+name = 'contents'
+type = 'string'
+[[.returns]]
+type = 'void'
+
+[loadfile]
+type = 'function'
+description = 'Loads in the contents of a file as a chunk and returns it if compilation is successful. Otherwise, if an error has occurred during compilation, nil followed by the error message will be returned.'
+[[.args]]
+name = 'path'
+type = 'string'
+[[.returns]]
+name = 'script, occuredError'
+type = '[function | nil, string]'
+
+[listfiles]
+type = 'function'
+description = 'Returns a table of files in folder.'
+[[.args]]
+name = 'folder'
+type = 'string'
+[[.returns]]
+name = 'folderContent'
+type = 'table'
+
+[isfile]
+type = 'function'
+description = 'Returns if path is a file or not.'
+[[.args]]
+name = 'path'
+type = 'string'
+[[.returns]]
+type = 'boolean'
+
+[isfolder]
+type = 'function'
+description = 'Returns if path is a folder or not.'
+[[.args]]
+name = 'path'
+type = 'string'
+[[.returns]]
+type = 'boolean'
+
+[makefolder]
+type = 'function'
+description = 'Make a new folder at `path`'
+[[.args]]
+name = 'path'
+type = 'string'
+
+[delfolder]
+type = 'function'
+description = 'Delete a folder at `path`. If no folder exist, it errors.'
+[[.args]]
+name = 'path'
+type = 'string'
+
+[delfile]
+type = 'function'
+description = 'Delete a file at `path`. If no folder exist, it errors.'
+[[.args]]
+name = 'path'
+type = 'string'
+
+[setclipboard]
+type = 'function'
+description = 'Set the content of the clipboard to `value`'
+[[.args]]
+name = 'value'
+type = 'string'
+
+[setfflag]
+type = 'function'
+description = 'Sets FFlag with Value. Must be run before the game loads, auto execute + auto launch recommended. You can look at a list of FFLag [here](https://fflag.eryn.io/)'
+[[.args]]
+name = 'FFLag'
+type = 'string'
+``````````
+name = 'Value'
+type = 'string'
+
+[getnamecallmethod]
+type = 'function'
+description = 'Returns the namecall method if the function is called in an __namecall metatable hook.'
+[[.returns]]
+name = 'method'
+type = 'string'
+
+[setnamecallmethod]
+type = 'function'
+description = 'Sets the current namecall method to the new namecall method. Must be called in a __namecall metatable hook.'
+[[.args]]
+name = 'method'
+type = 'string'
+
+[getsynasset]
+type = 'function'
+description = 'Returns a Content string that can be used as a fake Asset ID for GUI elements. Please note this will only affect your client.\r\n\r\nNote: Certain instances only work with specific file types. For example, VideoFrame\'s only work with .webm encoded videos.'
+[[.args]]
+name = 'path'
+type = 'string'
+
+[getspecialinfo]
+type = 'function'
+description = 'Gets a list of special properties for MeshParts, UnionOperations, and Terrain instances. Possible return values can be found [here](https://x.synapse.to/docs/reference/misc.html#get-special-info)'
+[[.args]]
+name = 'obj'
+type = 'Instance'
+[[.returns]]
+type = 'table'
+
+[saveinstance]
+type = 'function'
+description = [[
+  Saves the current game into your workspace folder. You can use table t to customize options for this.
+
+  Option	Value
+  **mode:**	optimized / full / scripts
+  **noscripts:**	true / false
+  **scriptcache:**	true / false
+  **timeout:**	any number
+]]
+
+[messagebox]
+type = 'function'
+description = 'Creates a message box with parameters text, caption and style. Return a code refeering to the button pressed. Info about parameter can be found [here](https://x.synapse.to/docs/reference/misc.html#message-box)'
+[[.args]]
+name = 'text'
+type = 'string'
+``````````
+name = 'caption'
+type = 'sting'
+``````````
+name = 'flags'
+type = 'number'
