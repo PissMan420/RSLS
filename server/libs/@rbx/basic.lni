@@ -87,8 +87,16 @@ obj = true
 [plugin]
 type = 'Plugin'
 
+[Drawing]
+type = 'table'
 
 [getgenv]
+description = 'Returns the environment that will be applied to each script ran by the scripting utility'
+type = 'function'
+[[.returns]]
+type = "table"
+
+[syn_getgenv]
 description = 'Returns the environment that will be applied to each script ran by the scripting utility'
 type = 'function'
 [[.returns]]
@@ -106,6 +114,12 @@ type = 'function'
 [[.returns]]
 type = 'table'
 
+[syn_getreg]
+description = 'Return the Lua registry.'
+type = 'function'
+[[.returns]]
+type = 'table'
+
 [getgc]
 name = 'getgc'
 type = 'function'
@@ -117,7 +131,25 @@ optional = 'true'
 [[.returns]]
 type = 'table'
 
+[syn_getgc]
+name = 'getgc'
+type = 'function'
+description = 'Returns all functions and userdata values within the GC. Passing `true` will also return tables.'
+[[.args]]
+name = 'include_tables'
+type = 'boolean'
+optional = 'true'
+[[.returns]]
+type = 'table'
+
 [getinstances]
+type = 'function'
+description = 'Returns a list of all instances within the game.'
+[[.returns]]
+name = 'instances'
+type = 'table'
+
+[syn_getinstances]
 type = 'function'
 description = 'Returns a list of all instances within the game.'
 [[.returns]]
@@ -138,6 +170,13 @@ name = 'module_scripts_and_local_script'
 type = 'table'
 
 [getloadedmodules]
+type = 'function'
+description = 'Returns all ModuleScripts loaded in the game.'
+[[.returns]]
+name = 'loadedModules'
+type = 'table'
+
+[syn_getloadedmodules]
 type = 'function'
 description = 'Returns all ModuleScripts loaded in the game.'
 [[.returns]]
@@ -252,7 +291,45 @@ type = 'ModuleScript | LocalScript'
 name = 'env'
 type = 'table'
 
+[syn_getsenv]
+type = 'function'
+description = 'Returns the environment of Script. Errors if the script is not loaded in memory.'
+[[.args]]
+name = 'Script'
+type = 'ModuleScript | LocalScript'
+[[.returns]]
+name = 'env'
+type = 'table'
+
+[getmenv]
+type = 'function'
+description = 'Returns the environment of Script. Errors if the script is not loaded in memory.'
+[[.args]]
+name = 'Script'
+type = 'ModuleScript'
+[[.returns]]
+name = 'env'
+type = 'table'
+
+[syn_getmenv]
+type = 'function'
+description = 'Returns the environment of Script. Errors if the script is not loaded in memory.'
+[[.args]]
+name = 'Script'
+type = 'ModuleScript'
+[[.returns]]
+name = 'env'
+type = 'table'
+
 [getcallingscript]
+type = 'function'
+description = 'Gets the script that is calling this function.'
+
+[[.returns]]
+type = 'LocalScript | ModuleScript | nil'
+name = 'script'
+
+[syn_getcallingscript]
 type = 'function'
 description = 'Gets the script that is calling this function.'
 
@@ -345,6 +422,15 @@ description = [[
 name = 'keycode'
 type = 'number'
 
+[syn_keypress]
+type = 'function'
+description = [[
+  Simulates a key press for the specified keycode. Keycodes are listed [here](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes).
+]]
+[[.args]]
+name = 'keycode'
+type = 'number'
+
 [keyrelease]
 type = 'function'
 description = [[
@@ -355,6 +441,12 @@ name = 'keycode'
 type = 'number'
 
 [mouse1click]
+type = 'function'
+description = 'Simulates a full left mouse button press.'
+[[.returns]]
+type = 'void'
+
+[syn_mouse1click]
 type = 'function'
 description = 'Simulates a full left mouse button press.'
 [[.returns]]
@@ -421,6 +513,67 @@ type = 'number'
 [[.returns]]
 type = 'void'
 
+[syn_mouse1press]
+type = 'function'
+description = 'Simulates a left mouse button press without releasing it.'
+[[.returns]]
+type = 'void'
+
+[syn_mouse1release]
+type = 'function'
+description = 'Simulates a left mouse button release.'
+[[.returns]]
+type = 'void'
+
+[syn_mouse2click]
+type = 'function'
+description = 'Simulates a full right mouse button press.'
+[[.returns]]
+type = 'void'
+
+[syn_mouse2press]
+type = 'function'
+description = 'Simulates a right mouse button press without releasing it.'
+[[.returns]]
+type = 'void'
+
+[syn_mouse2release]
+type = 'function'
+description = 'Simulates a right mouse button release.'
+[[.returns]]
+type = 'void'
+
+[syn_mousescroll]
+type = 'function'
+description = 'Scrolls the mouse wheel virtually by `px` pixels'
+[[.args]]
+name = 'px'
+type = 'number'
+
+[syn_mousemoverel]
+type = 'function'
+description = 'Moves the mouse cursor relatively to the current mouse position by coordinates x and y.'
+[[.args]]
+name = 'x'
+type = 'number'
+``````````
+name = 'y'
+type = 'number'
+[[.returns]]
+type = 'void'
+
+[syn_mousemoveabs]
+type = 'function'
+description = 'Move\'s your mouse to the x and y coordinates in pixels from topleft of the main window.'
+[[.args]]
+name = 'x'
+type = 'number'
+``````````
+name = 'y'
+type = 'number'
+[[.returns]]
+type = 'void'
+
 [hookfunction]
 type = 'function'
 description = [[
@@ -455,6 +608,16 @@ type = 'function'
 name = 'oldFunction'
 type = 'function'
 
+[replaceclosure]
+type = 'function'
+description = 'replaces closure 1 with closure 2'
+[[.args]]
+name = 'closure1'
+type = 'function
+``````````
+name = 'closure2'
+type = 'function'
+
 [hookmetamethod]
 type = 'function'
 description = [[
@@ -487,6 +650,16 @@ type = 'function'
 name = 'anCFunction'
 type = 'function'
 
+[syn_newcclosure]
+type = 'function'
+description = 'Pushes a new CClosure that invokes function f upon call. Can be used to avoid detection in thing such as a metamethod hook.'
+[[.args]]
+name = 'f'
+type = 'function'
+[[.returns]]
+name = 'anCFunction'
+type = 'function'
+
 [loadstring]
 type = 'function'
 description = 'Loads chunk as a Lua function with optional `chunk_name` that will be shown as the script name in errors and returns it if compilation is successful. Otherwise, if an error has occurred during compilation, nil followed by the error message will be returned.'
@@ -505,7 +678,23 @@ type = 'function'
 type = 'function'
 description = 'Returns true if the current thread is a Synapse thread. **Note:** Checkcaller does *NOT* check the call stack of the function, if you call a game function then it calls out to checkcaller, the result will be true! Be careful.'
 
+[syn_checkcaller]
+[checkcaller]
+type = 'function'
+description = 'Returns true if the current thread is a Synapse thread. **Note:** Checkcaller does *NOT* check the call stack of the function, if you call a game function then it calls out to checkcaller, the result will be true! Be careful.'
+
+
 [islclosure]
+type = 'function'
+description = 'Return true if `l` is a lua function'
+[[.args]]
+name = 'f'
+type = 'function'
+[[.returns]]
+name = 'isLuaFunc'
+type = 'boolean'
+
+[syn_islclosure]
 type = 'function'
 description = 'Return true if `l` is a lua function'
 [[.args]]
@@ -525,7 +714,38 @@ type = 'string'
 name = 'bytecode'
 type = 'string'
 
+[syn_dumpstring]
+type = 'function'
+description = 'Returns the Synapse formatted bytecode for source string script.'
+[[.args]]
+name = 'Script'
+type = 'string'
+[[.returns]]
+name = 'bytecode'
+type = 'string'
+
 [decompile]
+type = 'function'
+description = [[
+  Decompiles Script and returns the decompiled script with timeout. If the decompilation fails, then the return value will be an error message.
+
+  *Note:* The mode parameter is deprecated and is not used in newer versions of Synapse.
+]]
+[[.args]]
+name = 'thingToDecompile'
+type = 'ModuleScript | LocalScript | function | string | proto'
+``````````
+name = 'mode'
+type = 'string | boolean'
+``````````
+name = 'timeout'
+type = 'number'
+optional = 'true'
+[[.returns]]
+name = 'decompilation'
+type = 'string'
+
+[syn_decompile]
 type = 'function'
 description = [[
   Decompiles Script and returns the decompiled script with timeout. If the decompilation fails, then the return value will be an error message.
@@ -618,6 +838,17 @@ type = 'string'
 name = 'content'
 type = 'string'
 
+[syn_io_read]
+type = 'function'
+description = 'Reads the contents of the file located at `path` and returns it. If the file does not exist, it errors.'
+[[.args]]
+name = 'path'
+type = 'string'
+[[.returns]]
+name = 'content'
+type = 'string'
+
+
 [appendfile]
 type = 'function'
 description = 'Append the contents of the file located at `path` and returns it. If the file does not exist, it errors.'
@@ -628,7 +859,29 @@ type = 'string'
 name = 'content'
 type = 'string'
 
+[syn_io_append]
+type = 'function'
+description = 'Append the contents of the file located at `path` and returns it. If the file does not exist, it errors.'
+[[.args]]
+name = 'path'
+type = 'string'
+``````````
+name = 'content'
+type = 'string'
+
 [writefile]
+type = 'function'
+description = 'Writes contents to the supplied path.\r\nExtensions that are not allowed: .exe, .scr, .bat, .com, .csh, .msi, .vb, .vbs, .vbe, .ws, .wsf, .wsh, .ps1, .psy. Attempting to call this function with those extensions will error.'
+[[.args]]
+name = 'path'
+type = 'string'
+``````````
+name = 'contents'
+type = 'string'
+[[.returns]]
+type = 'void'
+
+[syn_io_write]
 type = 'function'
 description = 'Writes contents to the supplied path.\r\nExtensions that are not allowed: .exe, .scr, .bat, .com, .csh, .msi, .vb, .vbs, .vbe, .ws, .wsf, .wsh, .ps1, .psy. Attempting to call this function with those extensions will error.'
 [[.args]]
@@ -669,7 +922,25 @@ type = 'string'
 [[.returns]]
 type = 'boolean'
 
+[syn_io_isfile]
+type = 'function'
+description = 'Returns if path is a file or not.'
+[[.args]]
+name = 'path'
+type = 'string'
+[[.returns]]
+type = 'boolean'
+
 [isfolder]
+type = 'function'
+description = 'Returns if path is a folder or not.'
+[[.args]]
+name = 'path'
+type = 'string'
+[[.returns]]
+type = 'boolean'
+
+[syn_io_isfolder]
 type = 'function'
 description = 'Returns if path is a folder or not.'
 [[.args]]
@@ -685,7 +956,21 @@ description = 'Make a new folder at `path`'
 name = 'path'
 type = 'string'
 
+[syn_io_makefolder]
+type = 'function'
+description = 'Make a new folder at `path`'
+[[.args]]
+name = 'path'
+type = 'string'
+
 [delfolder]
+type = 'function'
+description = 'Delete a folder at `path`. If no folder exist, it errors.'
+[[.args]]
+name = 'path'
+type = 'string'
+
+[syn_io_delfolder]
 type = 'function'
 description = 'Delete a folder at `path`. If no folder exist, it errors.'
 [[.args]]
@@ -699,6 +984,13 @@ description = 'Delete a file at `path`. If no folder exist, it errors.'
 name = 'path'
 type = 'string'
 
+[syn_io_delfile]
+type = 'function'
+description = 'Delete a file at `path`. If no folder exist, it errors.'
+[[.args]]
+name = 'path'
+type = 'string'
+
 [setclipboard]
 type = 'function'
 description = 'Set the content of the clipboard to `value`'
@@ -706,7 +998,25 @@ description = 'Set the content of the clipboard to `value`'
 name = 'value'
 type = 'string'
 
+
+[syn_clipboard_set]
+type = 'function'
+description = 'Set the content of the clipboard to `value`'
+[[.args]]
+name = 'value'
+type = 'string'
+
 [setfflag]
+type = 'function'
+description = 'Sets FFlag with Value. Must be run before the game loads, auto execute + auto launch recommended. You can look at a list of FFLag [here](https://fflag.eryn.io/)'
+[[.args]]
+name = 'FFLag'
+type = 'string'
+``````````
+name = 'Value'
+type = 'string'
+
+[syn_setfflag]
 type = 'function'
 description = 'Sets FFlag with Value. Must be run before the game loads, auto execute + auto launch recommended. You can look at a list of FFLag [here](https://fflag.eryn.io/)'
 [[.args]]
@@ -781,3 +1091,129 @@ description = 'Set the maxium FPS'
 [[.args]]
 name = 'maxFps'
 type = 'number'
+
+[clonefunction]
+type = 'function'
+description = 'clones a function'
+[[.args]]
+name = 'func'
+type = 'function'
+[[.returns]]
+name = 'func'
+type = 'function'
+
+[cloneref]
+type = 'function'
+description = 'clones a service'
+[[.args]]
+name = 'service'
+type = 'Instance'
+[[.returns]]
+name = 'service'
+type = 'Instance'
+
+[syn_context_get]
+type = 'function'
+description = 'gets the context identity'
+[[.returns]]
+name = 'context'
+type = 'number'
+
+[syn_context_set]
+type = 'function'
+description = 'sets synapse's context identity'
+[[.args]]
+name = 'identity'
+type = 'number'
+
+[syn_websocket_close]
+type = 'function'
+description = 'closes a websocket connection'
+
+[syn_websocket_connect]
+type = 'function'
+description = 'connects to a websocket'
+
+[is_synapse_function]
+type = 'function'
+description = 'returns true if synapse function else false'
+[[.args]]
+name = 'func'
+type = 'function'
+[[.returns]]
+type = 'boolean'
+
+[validfgwindow]
+type = 'function'
+
+[setuntouched]
+type = 'function'
+
+[isuntouched]
+type = 'function'
+
+[readbinarystring]
+type = 'function'
+
+[getpcdprop]
+type = 'function'
+
+[getpointerfromstate]
+type = 'function'
+
+[is_lclosure]
+type = 'function'
+
+[is_protosmasher_caller]
+type = 'function'
+
+[is_readonly]
+type = 'function'
+
+[isluau]
+type = 'function'
+
+[isrbxactive]
+type = 'function'
+
+[gcinfo]
+type = 'function'
+
+[collectgarbage]
+type = 'function'
+
+[getinstancefromstate]
+type = 'function'
+
+[get_instances]
+type = 'function'
+
+[getproperties]
+type = 'function'
+
+[getcallstack]
+type = 'function'
+
+[rconsoleinfoinputasync]
+type = 'function'
+
+[syn_crypt_b64_encode]
+type = 'function'
+
+[syn_crypt_b64_decode]
+type = 'function'
+
+[syn_crypt_decrypt]
+type = 'function'
+
+[syn_crypt_derive]
+type = 'function'
+
+[syn_crypt_encrypt]
+type = 'function'
+
+[syn_crypt_random]
+type = 'function'
+
+[syn_crypt_hash]
+type = 'function'
