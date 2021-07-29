@@ -3,4 +3,4 @@
 /client/node_modules
 /.vscode/settings.json
 TODO.txt
-.vsix
+*.vsix
